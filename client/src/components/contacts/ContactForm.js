@@ -12,7 +12,7 @@ const ContactForm = () => {
 		type: 'personal' 
 	});
 
-	const { addContact, current, clearCurrent } = contactContext;
+	const { addContact, updateContact, clearCurrent, current } = contactContext;
 
 	const { name, email, phone, type } = contact;
 
@@ -34,13 +34,12 @@ const ContactForm = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		addContact(contact);
-		setContact({
-			name: '',
-			email: '', 
-			phone: '',
-			type: 'personal'
-		});
+		if (current === null) {
+			addContact(contact);
+		} else {
+			updateContact(contact);
+		}
+		clearAll();
 	}
 
 	const clearAll = () => {

@@ -12,7 +12,7 @@ import {
 	CLEAR_ERRORS
 } from '../types';
 
-const AuthtState = (props) => {
+const AuthState = (props) => {
 	
 	const initialState = {
 		token: localStorage.getItem('token'),
@@ -22,7 +22,7 @@ const AuthtState = (props) => {
 		error: null
 	};
 
-	const [state, dispatch] = useReducer(authReducer, initialState);
+	const [state, dispatch] = useReducer(AuthReducer, initialState);
 
 	// Load User
 	

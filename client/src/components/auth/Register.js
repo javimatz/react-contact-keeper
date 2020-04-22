@@ -13,7 +13,7 @@ const Register = () => {
 
 	const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
-	const onSubmit = () => {
+	const onSubmit = (e) => {
 		e.preventDefault();
 		console.log('Register Submit');
 	}

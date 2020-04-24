@@ -41,7 +41,7 @@ export default (state, action) => {
 		
 		case USER_LOADED: {
 			return {
-				..state,
+				...state,
 				isAuthenticated: true,
 				loading: false,
 				user: action.payload

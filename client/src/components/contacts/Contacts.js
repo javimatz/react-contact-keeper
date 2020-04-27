@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-// import { CSSTransition, TransitionGroup} from 'react-transition-group';
+import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import ContactContext from '../../context/contact/contactContext';
 import ContactItem from './ContactItem';
 import Spinner from '../layout/Spinner';
@@ -22,22 +22,23 @@ const Contacts = () => {
 	return (
 		<Fragment>
 			{contacts !== null && !loading ? (
-				<div>
+				<TransitionGroup>
 					{
-						(filtered !== null)?
+						filtered !== null?
 							filtered.map( contact => (
-								<div key={contact._id} className='item' >
+								<CSSTransition key={contact._id} timeout={500} classNames='item' >
 									<ContactItem contact={contact} />
-								</div>
+								</CSSTransition>
 						)) :
 							contacts.map( contact => (
-								<div key={contact._id} className='item' >
+								<CSSTransition key={contact._id} timeout={500} classNames='item' >
 									<ContactItem contact={contact} />
-								</div>
+								</CSSTransition>
 							))
 					}
-				</div>
-			) : <Spinner />} 
+				</TransitionGroup>
+				) : <Spinner />
+			} 
 
 			
 		</Fragment>

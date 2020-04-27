@@ -10,6 +10,7 @@ import {
 	CLEAR_CURRENT,
 	UPDATE_CONTACT,
 	FILTER_CONTACTS,
+	CLEAR_CONTACTS,
 	CLEAR_FILTER,
 	CONTACT_ERROR
 } from '../types';
@@ -77,6 +78,13 @@ const ContactState = (props) => {
 		});
 	}
 
+	// Clear Contacts
+	const clearContacts = () => {
+		dispatch({ 
+			type: CLEAR_CONTACTS
+		});
+	}
+	
 	// Set Current Contact
 	const setCurrent = (contact) => {
 		dispatch({ 
@@ -113,7 +121,7 @@ const ContactState = (props) => {
 			type: CLEAR_FILTER
 		});
 	}
-
+	
 	return (
 		<ContactContext.Provider
 			value = {{
@@ -124,6 +132,7 @@ const ContactState = (props) => {
 				getContacts,
 				addContact,
 				deleteContact,
+				clearContacts,
 				setCurrent,
 				clearCurrent,
 				updateContact,

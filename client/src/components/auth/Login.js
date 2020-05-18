@@ -24,8 +24,8 @@ const Login = (props) => {
 	}, [error, isAuthenticated, props.history]);
 	
 	const [user, setUser] = useState({
-		email: '',
-		password: '',
+		email: 'demo@gmail.com',
+		password: '123456',
 	});
 
 	const { email, password } = user;
@@ -54,7 +54,7 @@ const Login = (props) => {
 					<input 
 						type='email' 
 						name='email' 
-						value={email} 
+						value={email}
 						onChange={onChange} 
 						required
 					/>

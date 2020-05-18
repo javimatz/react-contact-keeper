@@ -2,7 +2,7 @@
 
 A contact keeper app.
 
-https://contact-keeper-506.herokuapp.com/login
+https://contact-keeper-506.herokuapp.com
 
 
 - react
